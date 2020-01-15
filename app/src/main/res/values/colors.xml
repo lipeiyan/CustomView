@@ -3,4 +3,29 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="color_ffa6ff00">#ffa6ff00</color>
+    <color name="color_ff36ff00">#ff36ff00</color>
+    <color name="color_ff00ff08">#ff00ff08</color>
+    <color name="color_ff00ff42">#ff00ff42</color>
+    <color name="color_ff00ff91">#ff00ff91</color>
+    <color name="color_ff00ffd2">#ff00ffd2</color>
+    <color name="color_ff00e0ff">#ff00e0ff</color>
+    <color name="color_ff0095ff">#ff0095ff</color>
+    <color name="color_ff0062ff">#ff0062ff</color>
+    <color name="color_ff001fff">#ff001fff</color>
+    <color name="color_ff2f00ff">#ff2f00ff</color>
+    <color name="color_ff7300ff">#ff7300ff</color>
+    <color name="color_ffb200ff">#ffb200ff</color>
+    <color name="color_fff200ff">#fff200ff</color>
+    <color name="color_ffff0089">#ffff0089</color>
+    <color name="color_ffff0001">#ffff0001</color>
+    <color name="color_ffff1900">#ffff1900</color>
+    <color name="color_ffff4200">#ffff4200</color>
+    <color name="color_ffff6f00">#ffff6f00</color>
+    <color name="color_ffff9300">#ffff9300</color>
+    <color name="color_ffffb500">#ffffb500</color>
+    <color name="color_ffffd300">#ffffd300</color>
+    <color name="color_ffffe500">#ffffe500</color>
+    <color name="color_ffffff00">#ffffff00</color>
 </resources>
