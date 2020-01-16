@@ -95,7 +95,7 @@ public class ColorView extends View {
             case MotionEvent.ACTION_MOVE:
                 mIsMove = true;
                 long time = System.currentTimeMillis();
-                if (time - mDownTime >= 250 || calSlideLength(mDownPoint, event.getX(), event.getY()) >= dip2px(mContext, 5)) {
+                if (time - mDownTime >= 250 || calSlideLength(mDownPoint, event.getX(), event.getY()) >= dip2px(mContext, 1)) {
                     double arc = Math.atan2(event.getY() - centerY, event.getX() - centerX);
                     double arcDiff = arc - mLastArc;
                     mStartAngle = mStartAngle + (float) (arcDiff * 180 / Math.PI);
@@ -123,7 +123,7 @@ public class ColorView extends View {
             case MotionEvent.ACTION_UP:
                 mIsMove = false;
                 long upTime = System.currentTimeMillis();//根据时间和触摸距离判断点击还是滑动
-                if (upTime - mDownTime < 250 && calSlideLength(mDownPoint, event.getX(), event.getY()) < dip2px(mContext, 5)) {
+                if (upTime - mDownTime < 250 && calSlideLength(mDownPoint, event.getX(), event.getY()) < dip2px(mContext, 1)) {
                     double arc = Math.atan2(event.getY() - centerY, event.getX() - centerX);
                     float angle = (float) (arc * 180 / Math.PI);
                     if (angle < 0) {
@@ -357,7 +357,6 @@ public class ColorView extends View {
     }
 
     /**
-     *
      * @param context
      * @param dpValue
      * @return dp转px
