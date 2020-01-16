@@ -18,6 +18,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.payne.customview.R;
 
+import static com.payne.customview.util.Utils.dip2px;
+
 
 /**
  * 描述：颜色选择view
@@ -356,13 +358,5 @@ public class ColorView extends View {
         return Math.sqrt(Math.pow(point1.x - x, 2) + Math.pow(point1.y - y, 2));
     }
 
-    /**
-     * @param context
-     * @param dpValue
-     * @return dp转px
-     */
-    public int dip2px(Context context, float dpValue) {
-        float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5F);
-    }
+
 }

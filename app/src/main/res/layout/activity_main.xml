@@ -82,6 +82,10 @@
             app:LineColor="@color/colorPrimary"
             app:LineDirection="left_bottom_right" />
 
-
+        <com.payne.customview.widget.PunchTimeView
+            android:id="@+id/punch"
+            android:layout_width="20dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 </ScrollView>

@@ -7,6 +7,7 @@ import com.payne.customview.util.DateTime;
 import com.payne.customview.widget.AnimLineProgressView;
 import com.payne.customview.widget.AnimNumProgressView;
 import com.payne.customview.widget.LineGraphicView;
+import com.payne.customview.widget.PunchTimeView;
 import com.payne.customview.widget.RingProgressView;
 
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private LineGraphicView graphicView;
     private AnimNumProgressView numProgressView;
     private AnimLineProgressView lineProgressView;
+    private PunchTimeView punchTimeView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         numProgressView.startAnim(0.8f, true, 1000);
         lineProgressView.startAnim(0.8f, true, 1000);
+
+        punchTimeView = findViewById(R.id.punch);
+        punchTimeView.showLine(true);
+        punchTimeView.drawProgress(0.5f);//加上0.0001f是为了临界点打卡能够有所显示
     }
 }

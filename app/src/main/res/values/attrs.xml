@@ -92,4 +92,11 @@
         <attr name="AnimProgressColor" format="color|reference" />
         <attr name="AnimProgressBackColor" format="color|reference" />
     </declare-styleable>
+
+    <declare-styleable name="PunchTimeView">
+        <attr name="timeLineColor" format="reference|color" />
+        <attr name="progressColor" format="reference|color" />
+        <attr name="timeLineWidth" format="dimension" />
+    </declare-styleable>
+
 </resources>
