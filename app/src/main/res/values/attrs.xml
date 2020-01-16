@@ -8,4 +8,88 @@
         <attr name="end_color" format="color" />
         <attr name="progress" format="integer" />
     </declare-styleable>
+
+    <declare-styleable name="RingView">
+        <attr name="RingColor" format="color|reference" />
+        <attr name="RingWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="RingProgressView">
+        <attr name="ringWidth" format="dimension" />
+        <attr name="ringProgressStartColor" format="color|reference" />
+        <attr name="ringProgressEndColor" format="color|reference" />
+        <attr name="ringProgressBackColor" format="color|reference" />
+        <attr name="ringProgressTitle" format="string" />
+        <attr name="ringProgressCirCleColor" format="color|reference" />
+        <attr name="ringProgressCirCleStrokeColor" format="color|reference" />
+        <attr name="ringProgressNumTextSize" format="dimension" />
+        <attr name="ringProgressTitleTextSize" format="dimension" />
+        <attr name="ringProgressTextColor" format="color|reference" />
+        <attr name="ringProgressProgress" format="float" />
+        <attr name="ringProgressAnimTime" format="integer" />
+        <attr name="ringProgressShowPercentSymbol" format="boolean" />
+        <attr name="ringProgressNumMarginTop" format="dimension" />
+        <attr name="ringProgressTitleMarginTop" format="dimension" />
+        <attr name="ringProgressShowText" format="boolean" />
+        <attr name="ringProgressShowCircle" format="boolean" />
+        <attr name="ringProgressStrokeCap" format="enum">
+            <enum name="BUTT" value="0" />
+            <enum name="ROUND" value="1" />
+            <enum name="SQUARE" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="ReactProgressView">
+        <attr name="reactNum" format="integer" />
+        <attr name="reactBackColor" format="color|reference" />
+        <attr name="reactProgressColor" format="color|reference" />
+        <attr name="rectWidth" format="dimension" />
+        <attr name="rectDistance" format="dimension" />
+        <attr name="reactCornerRadius" format="dimension" />
+        <attr name="reactTotalTime" format="integer" />
+        <attr name="rectProgress" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="LineGraphicView">
+        <attr name="lineGraphicAxisColor" format="color|reference" />
+        <attr name="lineGraphicTextColor" format="color|reference" />
+        <attr name="lineGraphicTextSize" format="dimension" />
+        <attr name="lineGraphicStrokeColor" format="color|reference" />
+        <attr name="lineGraphicPadding" format="dimension" />
+        <attr name="lineGraphicShowStroke" format="boolean" />
+        <attr name="lineGraphicCircleRadius" format="dimension" />
+        <attr name="lineGraphicCircleColor" format="color|reference" />
+        <attr name="lineGraphicLineColor" format="color|reference" />
+        <attr name="lineGraphicCircleLastColor" format="color|reference" />
+        <attr name="lineGraphicGradientStartColor" format="color|reference" />
+        <attr name="lineGraphicGradientEndColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DotLine">
+
+        <attr name="LineWidth" format="dimension" />
+        <attr name="LineCircleRadius" format="dimension" />
+        <attr name="LineCircleColor" format="color|reference" />
+        <attr name="LineColor" format="color|reference" />
+        <attr name="LineDirection" format="enum">
+            <enum name="left_right" value="0" />
+            <enum name="left_bottom_right" value="1" />
+            <enum name="left_top_right" value="2" />
+            <enum name="right_left" value="3" />
+            <enum name="right_bottom_left" value="4" />
+            <enum name="right_top_left" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AnimNumProgressView">
+        <attr name="TextSize" format="dimension" />
+        <attr name="TextColor" format="color|reference" />
+        <attr name="ShowSymbol" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AnimLineProgressView">
+        <attr name="AnimProgressColor" format="color|reference" />
+        <attr name="AnimProgressBackColor" format="color|reference" />
+    </declare-styleable>
 </resources>

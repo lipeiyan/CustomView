@@ -1,23 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <com.payne.slideview.SlideViewLayout
-        android:id="@+id/slide"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.payne.customview.widget.AnimNumProgressView
+            android:id="@+id/num_progress"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp" />
+
+        <com.payne.customview.widget.AnimLineProgressView
+            android:id="@+id/line_progress"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp" />
+
+        <com.payne.customview.widget.LineGraphicView
+            android:id="@+id/view_graphic"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:lineGraphicCircleColor="#9059e4"
+            app:lineGraphicCircleLastColor="#e72d48"
+            app:lineGraphicCircleRadius="2dp"
+            app:lineGraphicGradientEndColor="#e72d48"
+            app:lineGraphicGradientStartColor="#7e47d3"
+            app:lineGraphicLineColor="#9059e4"
+            app:lineGraphicTextColor="#ffffff"
+            app:lineGraphicTextSize="12sp" />
+
+        <com.payne.customview.widget.SeekColorView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp" />
+
+        <com.payne.customview.widget.RingView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp" />
+
+        <com.payne.customview.widget.RingProgressView
+            android:id="@+id/ring_progress"
+
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:ringProgressTextColor="@color/colorAccent"
+            app:ringProgressTitle="@string/app_name" />
+
+        <com.payne.customview.widget.ReactProgressView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:reactNum="20"
+            app:reactProgressColor="@color/colorAccent"
+            app:rectProgress="0.5" />
+
+        <com.payne.slideview.SlideViewLayout
+            android:id="@+id/slide"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
 
 
-    <com.payne.customview.widget.ColorView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="50dp" />
+        <com.payne.customview.widget.ColorView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp" />
 
-    <com.payne.customview.widget.SeekColorView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp" />
-</LinearLayout>
+        <com.payne.customview.widget.DotLine
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            app:LineCircleColor="@color/colorAccent"
+            app:LineColor="@color/colorPrimary"
+            app:LineDirection="left_bottom_right" />
+
+
+    </LinearLayout>
+</ScrollView>
