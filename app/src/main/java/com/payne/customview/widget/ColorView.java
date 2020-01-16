@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.support.annotation.Keep;
 import android.util.AttributeSet;
@@ -41,6 +42,7 @@ public class ColorView extends View {
     private int mIndex;
 
     private boolean mIsAnim;
+    private Context mContext;
 
     public ColorView(Context context) {
         this(context, null);
@@ -48,6 +50,7 @@ public class ColorView extends View {
 
     public ColorView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.mContext = context;
         this.mPaint = new Paint();
         this.mPaint.setAntiAlias(true);
         mPaint.setStrokeCap(Paint.Cap.BUTT);
@@ -80,6 +83,7 @@ public class ColorView extends View {
     private float mAngleDiff = 0;
 
     private long mDownTime;
+    private PointF mDownPoint = new PointF();
     private boolean mIsMove;
 
     @Override
@@ -91,7 +95,7 @@ public class ColorView extends View {
             case MotionEvent.ACTION_MOVE:
                 mIsMove = true;
                 long time = System.currentTimeMillis();
-                if (time - mDownTime >= 250) {
+                if (time - mDownTime >= 250 || calSlideLength(mDownPoint, event.getX(), event.getY()) >= dip2px(mContext, 5)) {
                     double arc = Math.atan2(event.getY() - centerY, event.getX() - centerX);
                     double arcDiff = arc - mLastArc;
                     mStartAngle = mStartAngle + (float) (arcDiff * 180 / Math.PI);
@@ -112,13 +116,14 @@ public class ColorView extends View {
                     return false;
                 }
                 mDownTime = System.currentTimeMillis();
+                mDownPoint.set(event.getX(), event.getY());
                 mLastArc = Math.atan2(event.getY() - centerY, event.getX() - centerX);
 
                 break;
             case MotionEvent.ACTION_UP:
                 mIsMove = false;
-                long upTime = System.currentTimeMillis();
-                if (upTime - mDownTime < 250) {
+                long upTime = System.currentTimeMillis();//根据时间和触摸距离判断点击还是滑动
+                if (upTime - mDownTime < 250 && calSlideLength(mDownPoint, event.getX(), event.getY()) < dip2px(mContext, 5)) {
                     double arc = Math.atan2(event.getY() - centerY, event.getX() - centerX);
                     float angle = (float) (arc * 180 / Math.PI);
                     if (angle < 0) {
@@ -342,5 +347,23 @@ public class ColorView extends View {
 
             }
         });
+    }
+
+    /**
+     * @return 距离
+     */
+    private double calSlideLength(PointF point1, float x, float y) {
+        return Math.sqrt(Math.pow(point1.x - x, 2) + Math.pow(point1.y - y, 2));
+    }
+
+    /**
+     *
+     * @param context
+     * @param dpValue
+     * @return dp转px
+     */
+    public int dip2px(Context context, float dpValue) {
+        float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5F);
     }
 }
